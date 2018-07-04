@@ -1,113 +1,46 @@
-# java-testing-example
+# bank-ocr kata
 
-This is the Java repository we'll work out of during this [training
-event](https://github.com/testdouble/contributing-tests/wiki/5-Day-Training-Agenda).
+This project is a placeholder for practicing the Bank OCR kata.
 
-## Instructions
+## Getting started
 
-Clone the repo:
-
-Git:
-```
-$ git clone git@github.com:testdouble/java-testing-example.git
-```
-
-Svn:
-```
-$ svn co https://github.com/testdouble/java-testing-example
-```
-
-Or download a ZIP of master [manually](https://github.com/testdouble/java-testing-example/archive/master.zip) and expand the contents someplace on your system
-
-## Prerequisites
-
-* Have a JDK installed
-* Have Maven installed and available on your PATH or IDE
-* Have Firefox installed
-
-## Verify installation
-
-You can verify the project builds correctly from your IDE or from the command
-line.
-
-### CLI
-
-Open a command prompt and verify that all needed bins are on your path and up to date:
+The project is preconfigured to execute Cucumber tests with JUnit. You can run
+the tests from the command line with:
 
 ```
-$ java -version
-# ^ should be at least 1.6
-$ mvn -v
-# ^ should be at least 3.0.0
+$ mvn test
 ```
 
-Finally, verify that `mvn install` succeeds.
+Or from Eclipse with `Run As` -> `Maven test`:
 
-You should see output like the following:
+<img width="709" alt="screen shot 2016-07-27 at 1 28 36 pm" src="https://cloud.githubusercontent.com/assets/79303/17185214/36405dc4-53fe-11e6-9768-54735e01489c.png">
+
+## Writing features
+
+Feature files are stored in [src/test/resources/bank](src/test/resources/bank),
+and you can add additional tests by adding additional `Scenario:` constructs to
+the existing feature file or by adding additional feature files.
+
+## Implementing step definitions
+
+When you run `mvn test`, Cucumber will output method stubs of step definitions
+to implement the tests like this:
 
 ```
-$ cd java-testing-example
-$ mvn install
-# ...
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running com.acme.app.HelloWorldProxyTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.357 sec
-Running com.acme.app.HelloWorldTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
-
-Results :
-
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
-
-[INFO]
-[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ app ---
-[INFO] Building jar: junit-mocha-example/target/app-0.0.1-SNAPSHOT.jar
-[INFO]
-[INFO] --- maven-install-plugin:2.4:install (default-install) @ app ---
-[INFO] Installing junit-mocha-example/target/app-0.0.1-SNAPSHOT.jar to /Users/justin/.m2/repository/com/acme/app/0.0.1-SNAPSHOT/app-0.0.1-SNAPSHOT.jar
-[INFO] Installing junit-mocha-example/pom.xml to /Users/justin/.m2/repository/com/acme/app/0.0.1-SNAPSHOT/app-0.0.1-SNAPSHOT.pom
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 9.159 s
-[INFO] Finished at: 2015-08-26T13:49:46-04:00
-[INFO] Final Memory: 20M/177M
-[INFO] ------------------------------------------------------------------------
+@When("^I parse the file$")
+public void i_parse_the_file() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
 ```
 
-### Eclipse
+Step definitions can be defined with the `@Given`, `@When`, and `@Then` method
+annotations in any class you like, though the `src/test/java/bank/Stepdefs.java`
+class has already been defined for you to start from.
 
-First, right-click the Project Explorer and select Import -> Import:
+## Resources
 
-<img width="497" alt="screen shot 2016-07-28 at 8 12 09 am" src="https://cloud.githubusercontent.com/assets/79303/17212149/9ef3612a-549b-11e6-882f-981f86677f38.png">
+For more information, see:
 
-Next, choose Maven -> Existing Maven Projects:
-
-<img width="531" alt="screen shot 2016-07-28 at 8 12 24 am" src="https://cloud.githubusercontent.com/assets/79303/17212171/ae1339c8-549b-11e6-9a72-c8ca0b5bed34.png">
-
-Tell Eclipse where you've downloaded or checked out the project and click Finish:
-
-<img width="655" alt="screen shot 2016-07-28 at 8 12 49 am" src="https://cloud.githubusercontent.com/assets/79303/17212185/b62d09b8-549b-11e6-97fa-f4ae226cfdef.png">
-
-You should see a progress bar as the project is imported:
-
-<img width="518" alt="screen shot 2016-07-26 at 8 56 02 am" src="https://cloud.githubusercontent.com/assets/79303/17138701/82969a66-530f-11e6-9a9b-ddee2ae4dadd.png">
-
-Once the project is imported, right-click the project, then choose Run As ->
-Maven install:
-
-<img width="703" alt="screen shot 2016-07-28 at 8 17 57 am" src="https://cloud.githubusercontent.com/assets/79303/17212230/fff899f4-549b-11e6-954d-8159938721af.png">
-
-If everything has succeeded, you should see a successful build in Eclipse's
-console:
-
-<img width="905" alt="screen shot 2016-07-28 at 8 19 06 am" src="https://cloud.githubusercontent.com/assets/79303/17212238/05d6ac4e-549c-11e6-9e38-5444885f9e3b.png">
-
-## Continue set up
-
-Once you've verified you have the project working, continue configuring your
-environment to start work as described [in this wiki
-page](https://github.com/testdouble/contributing-tests/wiki/Environment-Setup#java)
+* [Our wiki page on the kata](https://github.com/testdouble/contributing-tests/wiki/Bank-OCR-Kata-in-Cucumber)
+* [The kata's home page](http://www.codingdojo.org/cgi-bin/index.pl?KataBankOCR)

@@ -1,20 +1,45 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.testdouble</groupId>
-	<artifactId>test-training</artifactId>
-	<packaging>pom</packaging>
+
+<!--	<parent>
+		<groupId>com.testdouble</groupId>
+		<artifactId>test-training</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent> -->
+	<artifactId>bank-ocr</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>test-training</name>
-	<modules>
-        <!--  <module>example</module>
-          <module>greeting</module>
-          <module>unusual-spending-vendor</module>
-          <module>unusual-spending</module>
-          <module>example-cucumber</module> -->
-        <!--  <module>bank-ocr</module>
-          <module>selenium</module>
-          <module>gilded-rose</module>
-          <module>game-of-life</module> -->
-	</modules>
+	<name>bank-ocr-kata</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>
