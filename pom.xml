@@ -12,6 +12,7 @@
 	<groupId>com.test</groupId>
 	<artifactId>example</artifactId>
 	<packaging>jar</packaging>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<name>example</name>
 
